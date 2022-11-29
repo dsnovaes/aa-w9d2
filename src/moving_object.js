@@ -19,6 +19,13 @@ class MovingObject {
     draw(ctx) {
         ctx.beginPath();
         ctx.arc(100,100,20,0,2*Math.PI, true);
+        ctx.fillStlye = 'blue';
+        ctx.fill();
+    }
+
+    move() {
+        this.pos[0] += this.vel[0];
+        this.pos[1] += this.vel[1];
     }
 };
 
