@@ -1,12 +1,15 @@
 // Utility code, especially vector math stuff.
-
-
 const Util = {
-    inherits(childClass, parentClass) {
-        const Surrogate = function () {}
-        Surrogate.prototype = parentClass.prototype;
-        childClass.prototype = new Surrogate();
-        childClass.prototype.constructor = childClass;
+    inherits(child, parent) {
+        // console.log('inherinting')
+        // console.log(child)
+        // console.log(parent)
+        // function Surrogate() {}
+        // Surrogate.prototype = parent.prototype;
+        // child.prototype = new Surrogate();
+        // child.prototype.constructor = child;
+        child.prototype = Object.create(parent.prototype);
+        child.prototype.constructor = child;
     },
     //// Return a randomly oriented vector with the given length.
     randomVec(length) {
@@ -16,6 +19,9 @@ const Util = {
     // Scale the length of a vector by the given amount.
     scale(vec, m) {
         return [vec[0] * m, vec[1] * m];
+    },
+    thisIsATest() {
+        console.warn("this is a test")
     }
 }
 

@@ -7,7 +7,6 @@ MovingObject.prototype.draw(ctx),
 and MovingObject.prototype.isCollidedWith(otherMovingObject).
 
 */
-
 class MovingObject {
     constructor(object) {
         this.pos = object.pos;
@@ -18,8 +17,8 @@ class MovingObject {
 
     draw(ctx) {
         ctx.beginPath();
-        ctx.arc(100,100,20,0,2*Math.PI, true);
-        ctx.fillStlye = 'blue';
+        ctx.arc(this.pos[0],this.pos[1],this.radius,0,2*Math.PI);
+        ctx.fillStlye = this.color;
         ctx.fill();
     }
 

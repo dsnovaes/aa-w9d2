@@ -2,9 +2,6 @@
 const MovingObject = require("./moving_object.js");
 const Util = require('./util.js');
 
-
-Util.inherits(Asteroid, MovingObject);
-
 class Asteroid {
     COLOR = 'green';
     RADIUS = 25;
@@ -16,7 +13,8 @@ class Asteroid {
             vel:  Util.randomVec(12),
             radius: Asteroid.RADIUS,
             color: Asteroid.COLOR
-        })
+        });
+        Util.thisIsATest()
         // super({
         //     pos: this.pos,
         //     vel:  Util.randomVec(12), 
@@ -26,5 +24,8 @@ class Asteroid {
     }
     
 }  
+
+Util.inherits(Asteroid, MovingObject);
+
 
 module.exports = Asteroid;
